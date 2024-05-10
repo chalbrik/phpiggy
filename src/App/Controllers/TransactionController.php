@@ -29,4 +29,9 @@ class TransactionController
 
         redirectTo('/');
     }
+
+    public function editView(array $params)
+    {
+        dd($params);
+    }
 }
