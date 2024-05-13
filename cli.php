@@ -11,8 +11,6 @@ use Dotenv\Dotenv;
 $dotenv = Dotenv::createImmutable(Paths::ROOT);
 $dotenv->load();
 
-var_dump($_ENV);
-
 $db = new Database($_ENV['DB_DRIVER'], [
     'host' => $_ENV['DB_HOST'],
     'port' => $_ENV['DB_PORT'],

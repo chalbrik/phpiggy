@@ -24,3 +24,13 @@ CREATE TABLE IF NOT EXISTS transactions(
     
 );
 
+CREATE TABLE IF NOT EXISTS receipts(
+  id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  original_filename varchar(255) NOT NULL,
+  storage_filename varchar(255) NOT NULL,
+  media_type varchar(255) NOT NULL,
+  transaction_id bigint(20) unsigned NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY(transaction_id) REFERENCES transactions (id) ON DELETE CASCADE
+);
+
